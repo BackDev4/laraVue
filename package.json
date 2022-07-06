@@ -2,7 +2,8 @@
     "private": true,
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build",
+        "watch": "mix watch"
     },
     "devDependencies": {
         "@popperjs/core": "^2.10.2",
@@ -16,6 +17,10 @@
         "sass-loader": "^11.0.1",
         "vite": "^2.9.11",
         "vue": "^2.6.12",
+        "vue-loader": "^15.10.0",
         "vue-template-compiler": "^2.6.12"
+    },
+    "dependencies": {
+        "laravel-mix": "^6.0.49"
     }
 }
