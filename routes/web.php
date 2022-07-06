@@ -17,6 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::get('/req', function () {
+    return view('auth.requisites');
+});
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/security', function () {
+    return view('auth.security-code');
+});
+
+Route::get('/req2', function () {
+    return view('auth.requisites2');
+});
+
+Auth::routes();
