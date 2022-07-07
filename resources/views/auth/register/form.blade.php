@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <form class="d-flex justify-content-center" method="post" action="{{route('login')}}">
+    <form class="d-flex justify-content-center" method="post" action="{{route('register.step.1')}}">
         @csrf
         <div class="d-flex flex-column">
             <div class="card-title fs-4 fw-bold">
