@@ -29,4 +29,6 @@ Route::get('/req2', function () {
     return view('auth.requisites2');
 });
 
+Route::post('/', \App\Http\Controllers\Auth\RegisterController::class, 'create');
+
 Auth::routes();
