@@ -29,4 +29,8 @@ Route::get('/req2', function () {
     return view('auth.requisites2');
 });
 
+Route::get('/smstest', function(\App\Services\UserSmsService $userSmsService) {
+    $userSmsService->message("Привет", '+79154544713');
+});
+
 Auth::routes();
