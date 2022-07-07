@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <form class="d-flex justify-content-center">
+    <form class="d-flex justify-content-center" method="post">
         <div class="d-flex flex-column align-items-center">
             <div class="card-title fs-4 fw-bold" style="width: 55%;">
                 <h1>Введите код безопасности</h1>

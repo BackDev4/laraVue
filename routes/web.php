@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisterStepsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +30,8 @@ Route::get('/req2', function () {
     return view('auth.requisites2');
 });
 
-Route::post('/', \App\Http\Controllers\Auth\RegisterController::class, 'create');
-
+Route::get('/register/step/1', [RegisterStepsController::class, 'registerForm']);
+Route::get('/register/step/1', [RegisterStepsController::class, 'businessForm']);
+Route::get('/register/step/1', [RegisterStepsController::class, 'checkInputData']);
+Route::get('/register/step/1', [RegisterStepsController::class, 'checkSMS']);
 Auth::routes();
