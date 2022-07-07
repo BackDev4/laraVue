@@ -29,4 +29,8 @@ Route::get('/req2', function () {
     return view('auth.requisites2');
 });
 
+Route::get('/cabinet', function () {
+    return view('pages.personal-area');
+});
+
 Auth::routes();
