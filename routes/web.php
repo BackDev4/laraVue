@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['middleware' => 'guest', 'as' => 'register.step.', 'prefix' => '/register/'], function() {
+Route::group(['middleware' => 'guest', 'as' => 'register.step.', 'prefix' => '/register/'], function () {
     Route::get('step/1', [RegisterStepsController::class, 'registerForm'])->name('1');
     Route::post('step/1', [RegisterStepsController::class, 'registerForm']);
 
@@ -30,6 +30,10 @@ Route::group(['middleware' => 'guest', 'as' => 'register.step.', 'prefix' => '/r
 
 Route::get('/cabinet', function () {
     return view('pages.personal-area');
+});
+
+Route::get('/code', function () {
+    return view('auth.register.security-code');
 });
 
 Auth::routes();
