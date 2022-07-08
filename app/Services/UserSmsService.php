@@ -7,28 +7,20 @@ use Illuminate\Support\Facades\Http;
 
 class UserSmsService {
 
-    private string $token;
+    private string $username;
+    private string $password;
+    private string $origin_id;
+
     public function __construct()
     {
-        $response = Http::post("https://online.sigmasms.ru/api/login", [
-            "username" => config("sms.username"),
-            "password" => config("sms.password")
-        ]);
-        $this->token = $response->json('token');
+        $this->username = config('sms.username');
+        $this->password = config('sms.password');
+        $this->origin_id = config('sms.origin_id');
     }
 
-    public function message($message, $phone)
+    public function sendTextMessage(string $message, $phone) : void
     {
-        $result = Http::withHeaders([
-            "Authorization" => $this->token
-        ])->post("https://online.sigmasms.ru/api/sendings", [
-            "recipient" => $phone,
-            "type" => "sms",
-            "payload" => [
-                "sender" => "B-Media",
-                "text" => "Hello"
-            ]
-        ]);
-        dd($result->body());
+        $url = "https://smsimple.ru/http_send.php?user={$this->username}&pass={$this->password}&or_id={$this->origin_id}&phone=$phone&message=$message";
+        Http::get($url);
     }
 }
