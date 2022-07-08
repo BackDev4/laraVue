@@ -32,8 +32,8 @@ Route::get('/cabinet', function () {
     return view('pages.personal-area');
 });
 
-Route::get('/code', function () {
-    return view('auth.register.security-code');
+Route::get('/user-table', function () {
+    return view('pages.user-table');
 });
 
 Auth::routes();

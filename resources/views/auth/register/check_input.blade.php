@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="mt-3">
-                <input type="text" value="{{ $info['ogrnip'] }}" placeholder="ОРГНИП" name="ogrnip">
+                <input type="text" value="{{ $info['ogrnip'] }}" placeholder="ОГРНИП" name="ogrnip">
             </div>
             <div class="mt-3">
                 <input type="text" value="{{ $info['okved'] }}" placeholder="ОКВЭД" name="okved">

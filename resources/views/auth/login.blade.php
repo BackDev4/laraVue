@@ -7,11 +7,11 @@
                 <span>Вход</span>
             </div>
             <div class="d-flex flex-column w-100">
-                <input type="text" placeholder="Телефон">
+                <input type="text" placeholder="Телефон" name="telephone">
                 <span>На этот номер придёт код безопасности</span>
             </div>
             <div class="mt-3">
-                <input type="password" placeholder="Пароль" class="w-100">
+                <input type="password" placeholder="Пароль" class="w-100" name="password">
             </div>
             <div class="mt-2">
                 <button type="submit" href="#" class="btn btn-primary">Войти</button>
