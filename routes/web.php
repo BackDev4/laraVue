@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisterStepsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,20 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::group(['middleware' => 'guest', 'as' => 'register.step.', 'prefix' => '/register/'], function() {
+    Route::get('step/1', [RegisterStepsController::class, 'registerForm'])->name('1');
+    Route::post('step/1', [RegisterStepsController::class, 'registerForm']);
 
-Route::get('/req', function () {
-    return view('auth.requisites');
-});
+    Route::get('step/2', [RegisterStepsController::class, 'businessForm'])->name('2');
+    Route::post('step/2', [RegisterStepsController::class, 'businessForm']);
 
-Route::get('/security', function () {
-    return view('auth.security-code');
-});
+    Route::get('step/3', [RegisterStepsController::class, 'checkInputData'])->name('3');
+    Route::post('step/3', [RegisterStepsController::class, 'checkInputData']);
 
-Route::get('/req2', function () {
-    return view('auth.requisites2');
+    Route::get('step/4', [RegisterStepsController::class, 'checkSMS'])->name('4');
+    Route::post('step/4', [RegisterStepsController::class, 'checkSMS']);
 });
 
 Route::get('/cabinet', function () {
