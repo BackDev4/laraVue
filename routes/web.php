@@ -27,4 +27,9 @@ Route::group(['middleware' => 'guest', 'as' => 'register.step.', 'prefix' => '/r
     Route::get('step/4', [RegisterStepsController::class, 'checkSMS'])->name('4');
     Route::post('step/4', [RegisterStepsController::class, 'checkSMS']);
 });
+
+Route::get('/cabinet', function () {
+    return view('pages.personal-area');
+});
+
 Auth::routes();
