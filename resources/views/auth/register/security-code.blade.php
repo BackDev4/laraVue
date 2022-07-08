@@ -16,21 +16,39 @@
             </div>
             <div class="d-flex" style="width: 55%;">
                 <div>
-                    <input type="number" style="width: 48px; height: 56px; border-radius: 12px">
+                    <input type="number" style="width: 48px; height: 56px; border-radius: 12px" name="code">
                 </div>
                 <div class="ms-2">
-                    <input type="number" style="width: 48px; height: 56px; border-radius: 12px">
+                    <input type="number" style="width: 48px; height: 56px; border-radius: 12px" name="code">
                 </div>
                 <div class="ms-2">
-                    <input type="number" style="width: 48px; height: 56px; border-radius: 12px">
+                    <input type="number" style="width: 48px; height: 56px; border-radius: 12px" name="code">
                 </div>
                 <div class="ms-2">
-                    <input type="number" style="width: 48px; height: 56px; border-radius: 12px">
+                    <input type="number" style="width: 48px; height: 56px; border-radius: 12px" name="code">
                 </div>
             </div>
+            <div style="margin-right: 62px" onclick="getCode()">
+                <span class="btn btn-primary">Проверить</span>
+            </div>
             <div class="mt-2" style="width: 55%;">
-                <span style="cursor: pointer;">Отправить ещё раз</span>
+                <span style="cursor: pointer;" id="btn">Отправить ещё раз</span>
             </div>
         </div>
     </form>
 @endsection
+
+<script>
+    let code = null;
+    const inputs = document.getElementsByName('code');
+
+    function getCode() {
+        let inputsValues = [];
+
+        for (let input of inputs) {
+            inputsValues.push(input.value.slice(0, 1))
+        }
+
+        code = inputsValues.join('')
+    }
+</script>
