@@ -24,7 +24,7 @@ import Vuetify from './plugins/vuetify'
 
 Vue.component('app-personal-area', require('./components/pages/AppPersonalArea').default);
 Vue.component('app-user-table', require('./components/pages/AppUserTable').default);
-Vue.component('the-side-bar', require('./components/TheSideBar').default);
+Vue.component('app-main-component', require('./components/AppMainComponent').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

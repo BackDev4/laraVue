@@ -7,7 +7,7 @@
                 <span>Вход</span>
             </div>
             <div class="d-flex flex-column w-100">
-                <input type="text" placeholder="Телефон" name="telephone">
+                <input type="text" placeholder="Телефон" name="phone">
                 <span>На этот номер придёт код безопасности</span>
             </div>
             <div class="mt-3">
