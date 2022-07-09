@@ -1,9 +1,10 @@
 <template>
-    <v-app-bar app>
-        <v-btn @click="drawer = !drawer">Кнопочка</v-btn>
-        <v-spacer></v-spacer>
-        <v-app-bar-title>Header</v-app-bar-title>
-
+    <v-app>
+        <v-app-bar app class="deep-purple--text">
+            <v-btn @click="drawer = !drawer" class="deep-purple--text">Кнопочка</v-btn>
+            <v-spacer></v-spacer>
+            <v-app-bar-title>Header</v-app-bar-title>
+        </v-app-bar>
         <v-navigation-drawer app v-model="drawer" temporary>
             <v-list dense>
                 <v-subheader>
@@ -20,19 +21,18 @@
                                 <h5 v-text="item.text"></h5>
                             </v-list-item-title>
                         </v-list-item-content>
-
                     </v-list-item>
                 </v-list-item-group>
             </v-list>
         </v-navigation-drawer>
-    </v-app-bar>
-
+        <slot></slot>
+    </v-app>
 </template>
 
 <script>
 
 export default {
-    name: "TheSideBar",
+    name: "AppMainComponent",
     data() {
         return {
             drawer: false,
@@ -47,5 +47,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>

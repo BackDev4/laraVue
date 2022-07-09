@@ -27,11 +27,14 @@
 </head>
 <body>
 <div id="app">
+    <app-main-component>
+        <v-content class="mt-5">
+            <v-container fluid>
+                @yield('content')
+            </v-container>
+        </v-content>
+    </app-main-component>
 
-    <the-side-bar></the-side-bar>
-    <v-content class="mt-5">
-        @yield('content')
-    </v-content>
 
 
     {{--    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">--}}
