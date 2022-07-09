@@ -20,7 +20,7 @@ class UserSmsService {
 
     public function sendTextMessage(string $message, $phone) : void
     {
-        $url = "https://smsimple.ru/http_send.php?user={$this->username}&pass={$this->password}&or_id={$this->origin_id}&phone=$phone&message=$message";
+        $url = "http://smsimple.ru/http_send.php?user={$this->username}&pass={$this->password}&or_id={$this->origin_id}&phone=$phone&message=$message";
         Http::get($url);
     }
 }
