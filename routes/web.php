@@ -41,9 +41,8 @@ Route::group(['middleware' => 'guest', 'as' => 'register.step.', 'prefix' => '/r
 });
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/cabinet', function () {
-        return view('pages.personal-area');
-    })->name('lk');
+    Route::view('/cabinet', 'pages.personal-area')->name('lk');
+    Route::view('/table', 'pages.user-table');
 });
 
 
