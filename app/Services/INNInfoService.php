@@ -17,11 +17,11 @@ class INNInfoService
     public function info($inn) : array
     {
         $result = $this->client->findById('party', $inn, 1);
-        $result = $result[0];
+        $result = $result[0] ?? [];
         return [
             'inn' => $inn,
             'fullName' => $result['data']['management']['name'] ?? "",
-            'dateReg' => ($result['data']['state']['registration_date'] / 1000) ?? "",
+            'dateReg' => ($result['data']['state']['registration_date'] ?? 1 / 1000) ?? "",
             'ogrnip' => $result['data']['ogrn'] ?? "",
             'okved' => $result['data']['okved'] ?? "",
             'address' => $result['data']['address']['value'] ?? "",

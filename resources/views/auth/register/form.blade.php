@@ -8,14 +8,14 @@
                 <h1>Регистрация</h1>
             </div>
             <div>
-                <input type="text" placeholder="Имя" class="w-75" name="name">
+                <input type="text" value="{{ old('name') }}" placeholder="Имя" class="w-75" name="name">
             </div>
             <div class="d-flex flex-column mt-3 w-75">
-                <input type="text" placeholder="Телефон" name="number">
+                <input value="{{ old('phone') }}" type="phone" placeholder="Телефон" name="phone">
                 <span>На этот номер придёт код безопасности</span>
             </div>
             <div class="mt-3">
-                <input type="email" placeholder="Email" class="w-75" name="email">
+                <input type="email" value="{{ old('email') }}" placeholder="Email" class="w-75" name="email">
             </div>
             <div class="mt-3">
                 <input type="password" placeholder="Придумайте пароль" class="w-75" name="password">
