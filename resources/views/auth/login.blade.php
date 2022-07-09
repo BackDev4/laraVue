@@ -20,7 +20,7 @@
                 <button type="submit" class="btn btn-primary">Войти</button>
             </div>
             <div class="d-flex flex-column mt-3">
-                <a href="{{ route('register') }}">Создать учётную запись</a>
+                <a href="{{ route('register.step.1') }}">Создать учётную запись</a>
                 <a href="#">Я забыл пароль</a>
             </div>
         </div>
