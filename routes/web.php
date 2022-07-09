@@ -37,8 +37,11 @@ Route::group(['middleware' => 'guest', 'as' => 'register.step.', 'prefix' => '/r
         ->name('4')
         ->middleware('register_step:4');
     Route::post('step/4', [RegisterStepsController::class, 'checkSMS'])
-        ->middleware('register_step:4');;
+        ->middleware('register_step:4');
 });
+
+Route::get('/login', 'Auth\LoginController@login')->name('login');
+Route::post('/login', ' Auth\LoginController@login');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::view('/cabinet', 'pages.personal-area')->name('lk');
@@ -46,4 +49,4 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 
-Auth::routes();
+
