@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['middleware' => 'guest', 'as' => 'register.step.', 'prefix' => '/register/'], function() {
+Route::group(['middleware' => 'guest', 'as' => 'register.step.', 'prefix' => '/register/'], function () {
     Route::get('step/1', [RegisterStepsController::class, 'registerForm'])
         ->name('1')
         ->middleware('register_step:1');
@@ -40,8 +40,10 @@ Route::group(['middleware' => 'guest', 'as' => 'register.step.', 'prefix' => '/r
         ->middleware('register_step:4');;
 });
 
-Route::get('/cabinet', function () {
-    return view('pages.personal-area');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/cabinet', function () {
+        return view('pages.personal-area');
+    })->name('lk');
 });
 
 
