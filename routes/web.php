@@ -14,29 +14,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['middleware' => 'guest', 'as' => 'register.step.', 'prefix' => '/register/'], function () {
-    Route::get('step/1', [RegisterStepsController::class, 'registerForm'])
+Route::group(['middleware' => 'guest', 'as' => 'register.step.', 'prefix' => '/register'], function () {
+    Route::get('/', [RegisterStepsController::class, 'registerForm'])
         ->name('1')
         ->middleware('register_step:1');
-    Route::post('step/1', [RegisterStepsController::class, 'registerForm'])
+    Route::post('/', [RegisterStepsController::class, 'registerForm'])
         ->middleware('register_step:1');;
 
-    Route::get('step/2', [RegisterStepsController::class, 'businessForm'])
+    Route::get('/step/2', [RegisterStepsController::class, 'checkSMS'])
         ->name('2')
         ->middleware('register_step:2');
-    Route::post('step/2', [RegisterStepsController::class, 'businessForm'])
+    Route::post('/step/2', [RegisterStepsController::class, 'checkSMS'])
         ->middleware('register_step:2');;
 
-    Route::get('step/3', [RegisterStepsController::class, 'checkInputData'])
+    Route::get('/step/3', [RegisterStepsController::class, 'businessForm'])
         ->name('3')
         ->middleware('register_step:3');
-    Route::post('step/3', [RegisterStepsController::class, 'checkInputData'])
+    Route::post('/step/3', [RegisterStepsController::class, 'businessForm'])
         ->middleware('register_step:3');
 
-    Route::get('step/4', [RegisterStepsController::class, 'checkSMS'])
+    Route::get('/step/4', [RegisterStepsController::class, 'checkInputData'])
         ->name('4')
         ->middleware('register_step:4');
-    Route::post('step/4', [RegisterStepsController::class, 'checkSMS'])
+    Route::post('step/4', [RegisterStepsController::class, 'checkInputData'])
         ->middleware('register_step:4');
 });
 
@@ -46,6 +46,11 @@ Route::post('/login', 'App\Http\Controllers\Auth\LoginController@login');
 Route::group(['middleware' => 'auth'], function () {
     Route::view('/cabinet', 'pages.personal-area')->name('lk');
     Route::view('/table', 'pages.user-table');
+
+    Route::group(['prefix' => '/api'], function(){
+        \App\Http\Controllers\Api\UsersController::routes();
+    });
+
 });
 
 

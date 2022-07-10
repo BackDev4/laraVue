@@ -2,7 +2,7 @@
 
 @section('content')
     @php($info = \Illuminate\Support\Facades\Session::get('businessInfo'))
-    <form class="d-flex flex-column align-items-center" action="{{ route('register.step.3') }}" method="post">
+    <form class="d-flex flex-column align-items-center" action="{{ route('register.step.4') }}" method="post">
         @csrf
         <div class="d-flex flex-column">
             <div>
